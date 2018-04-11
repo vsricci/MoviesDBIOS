@@ -99,6 +99,11 @@ class FavoritePopularMoviesViewController: UIViewController, FavoritePopularMovi
             self.filterSelectedDate = filterPopularFavoriteYear
             self.filterFavoriteMovies = self.presenter.fetchFavoritePopularMovies().filter("release_date CONTAINS [cd]  %@ && vote_average > 0.0", filterSelectedDate).sorted(byKeyPath: "release_date", ascending: false)
             self.tableView.reloadData()
+            
+            if self.filterFavoriteMovies.count == 0 {
+                
+                noResultsFavoritesSearchMovies(isHidden: false)
+            }
         }
        
     }
@@ -126,7 +131,7 @@ class FavoritePopularMoviesViewController: UIViewController, FavoritePopularMovi
             descriprionNoResults.isHidden = true
         }
         else {
-            
+            self.tableView.isHidden = true
             imageNoResults.image = UIImage(named: "search_icon")
             imageNoResults.contentMode = .scaleAspectFill
             imageNoResults.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -158,6 +163,49 @@ class FavoritePopularMoviesViewController: UIViewController, FavoritePopularMovi
 //            descriprionNoResults.isHidden = false
         }
       
+    }
+    
+    func noResultsFavoritesSearchMovies(isHidden: Bool) {
+        
+        
+        if isHidden == true {
+            self.tableView.isHidden = false
+            imageNoResults.isHidden = true
+            descriprionNoResults.isHidden = true
+        }
+        else {
+            self.tableView.isHidden = true
+            imageNoResults.image = UIImage(named: "search_icon")
+            imageNoResults.contentMode = .scaleAspectFill
+            imageNoResults.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
+            descriprionNoResults.text = "Sua busca não resultou em nenhum resultado"
+            descriprionNoResults.numberOfLines = 0
+            descriprionNoResults.font = UIFont.systemFont(ofSize: 17)
+            descriprionNoResults.textAlignment = .center
+            self.view.addSubview(imageNoResults)
+            self.view.addSubview(descriprionNoResults)
+            
+            imageNoResults.isHidden = isHidden
+            descriprionNoResults.isHidden = isHidden
+            imageNoResults.snp.makeConstraints({ (make) in
+                
+                make.center.equalTo(self.view.snp.center)
+                make.width.equalTo(200)
+                make.height.equalTo(200)
+            })
+            
+            descriprionNoResults.snp.makeConstraints({ (make) in
+                make.top.equalTo(imageNoResults.snp.bottom).offset(16)
+                make.leading.equalTo(16)
+                make.trailing.equalTo(-16)
+                make.height.equalTo(45)
+            })
+            
+            //            imageNoResults.isHidden = false
+            //            descriprionNoResults.isHidden = false
+        }
+        
     }
 
 }
