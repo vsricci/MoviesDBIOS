@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.7.0)
+  - IQKeyboardManagerSwift (5.0.8)
+  - Realm (3.3.0):
+    - Realm/Headers (= 3.3.0)
+  - Realm/Headers (3.3.0)
+  - RealmSwift (3.3.0):
+    - Realm (= 3.3.0)
+  - RealmTypeSafeQuery (0.7.0):
+    - RealmSwift (~> 3.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - IQKeyboardManagerSwift
+  - RealmSwift
+  - RealmTypeSafeQuery
+  - SDWebImage
+  - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
+  RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
+  RealmTypeSafeQuery: 97390b9d806819aac9b4146346f2928012b97bd2
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 41c38a1626a802ce0d6cede164a182a486e34f0a
+
+COCOAPODS: 1.4.0

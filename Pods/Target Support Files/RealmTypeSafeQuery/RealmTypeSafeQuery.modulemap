@@ -1,0 +1,6 @@
+framework module RealmTypeSafeQuery {
+  umbrella header "RealmTypeSafeQuery-umbrella.h"
+
+  export *
+  module * { export * }
+}
